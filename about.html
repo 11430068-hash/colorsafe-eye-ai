@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ColorSafe EYE-AI 計畫說明與設計原則。">
+    <title>關於 ColorSafe EYE-AI</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="info-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="回到首頁">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><strong>COLORSAFE</strong><small>EYE-AI</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a href="index.html#workspace">工作目錄</a>
+        <a href="about.html">關於計畫</a>
+        <a href="index.html#workflow">檢測流程</a>
+        <a href="index.html#screening">影像紀錄</a>
+        <a href="index.html#history">歷史紀錄</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button-outline button-small" href="index.html#screening">開始紀錄</a>
+      </div>
+    </header>
+
+    <main class="info-main section-wrap">
+      <section class="info-hero">
+        <p class="eyebrow">ABOUT</p>
+        <h1>關於這個專案</h1>
+        <p>ColorSafe EYE-AI 旨在提供一個簡單、可自行保管的眼部影像記錄方式，讓使用者在日常生活中，能更容易記錄拍攝條件、觀察眼部外觀變化，並在需要時與醫療專業人員溝通。</p>
+      </section>
+
+      <section class="info-content">
+        <article>
+          <h2>1. 動機</h2>
+          <p>眼部健康問題常常在早期不會有明顯不適。忙碌的生活、就診安排與通勤時間，經常讓人延後尋求專業檢查。ColorSafe EYE-AI 希望把觀察變成一種低門檻、可重複保存的日常行為，幫助使用者保留紀錄，便於在有需要時與眼科專業人員討論。</p>
+        </article>
+
+        <article>
+          <h2>2. 問題</h2>
+          <p>手機拍攝時，光線、反光、曝光與自動白平衡都可能影響照片顏色。即使量測出 RGB、HSV 或 CIELAB 數值，這些資訊本身也不能作為臨床診斷依據。真正的疾病判定，需要經過標註、驗證與臨床評估；本原型以教育與個人整理為主，不作診斷。</p>
+        </article>
+
+        <article>
+          <h2>3. 改進方向</h2>
+          <p>本版本加入 RGBW 校色貼紙拍攝指引，讓使用者可在照片中記錄校色參考；此外，本系統會在本機端偵測眼部區域、計算 ROI 的色彩特徵，作為個人觀察與健康溝通的整理工具。所有處理都在瀏覽器本機完成，不上傳資料，數值僅供個人整理與就醫溝通參考。</p>
+        </article>
+
+        <article>
+          <h2>4. 使用限制</h2>
+          <p>這不是醫療器材，也不是眼部疾病篩檢 or 診斷工具。若有眼痛、視力明顯變化、外傷或長期異常，請與眼科專業人員聯繫。本專案的目標，是幫助你整理紀錄，而不是替代醫療判斷。</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

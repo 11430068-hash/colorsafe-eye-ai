@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f3">
+    <meta name="description" content="ColorSafe EYE-AI 眼部影像初篩與健康衛教原型。">
+    <title>ColorSafe EYE-AI｜眼部影像紀錄</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js?v=nearby-eye-clinic-map-20261105" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ColorSafe EYE-AI 首頁">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><strong>COLORSAFE</strong><small>EYE-AI</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a href="#workflow">檢測流程</a>
+        <a href="#triage">檢測前確認</a>
+        <a href="#calibration">校色準備</a>
+        <a href="#screening">影像紀錄</a>
+        <a href="#history">歷史紀錄</a>
+        <a href="#dataset">資料集檢查</a>
+      </nav>
+      <div class="header-actions">
+        <span class="account-name" id="account-name"></span>
+        <button class="button button-outline button-small" id="account-button" type="button">登入 / 註冊</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-wrap">
+        <div class="hero-copy">
+          <h1>ColorSafe EYE-AI</h1>
+          <p class="hero-text">眼部影像紀錄與個人觀察工具，讓你在日常中保留拍攝條件、色彩資訊與歷史紀錄。</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#screening">開始影像紀錄 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="眼部影像校色示意">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="visual-label label-top"><span class="status-pip"></span> COLOR CALIBRATION</div>
+          <div class="eye-illustration">
+            <div class="eye-shadow"></div>
+            <div class="eye-shape">
+              <div class="iris"><div class="pupil"></div><span class="iris-glint"></span></div>
+            </div>
+            <div class="under-eye-line"></div>
+            <div class="calibration-sticker"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <span class="scan-line"></span>
+          </div>
+          <div class="visual-label label-bottom"><span class="tiny-cross">+</span> EYE IMAGE</div>
+          <div class="visual-caption"><strong>觀察，不是診斷</strong><span>把每次影像安全留在你的裝置</span></div>
+        </div>
+      </section>
+
+      <section class="stats-strip section-wrap" aria-label="系統特色">
+        <div><span class="stat-number">01</span><span>了解拍攝環境</span></div>
+        <div><span class="stat-number">02</span><span>記錄影像量測</span></div>
+        <div><span class="stat-number">03</span><span>保存個人歷史</span></div>
+        <p>資料僅儲存在目前瀏覽器</p>
+      </section>
+
+      <section class="workflow-section" id="workflow">
+        <div class="section-wrap">
+          <div class="section-heading heading-light">
+            <p class="eyebrow">拍攝流程</p>
+            <h2>拍攝流程</h2>
+            <p>依序完成貼紙準備、影像拍攝、校色確認與紀錄保存。</p>
+          </div>
+          <div class="workflow-flow">
+            <div class="workflow-column">
+              <article class="workflow-step">
+                <span class="workflow-number">1</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="2"/><rect x="15" y="19" width="6" height="6" fill="currentColor"/><rect x="23" y="19" width="6" height="6" fill="currentColor"/><rect x="31" y="19" width="6" height="6" fill="currentColor"/><rect x="15" y="27" width="22" height="4" fill="currentColor"/></svg></span>
+                <div><h3>放置校色貼紙</h3><p>依貼紙說明貼於眼睛下方臉頰處，不遮擋眼部。</p><a href="#calibration">查看拍攝準備 <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-number">2</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="24" rx="4"/><circle cx="24" cy="24" r="7" fill="none"/><path d="M18 12l2-4h8l2 4"/><path d="M24 30v6M18 24h12"/></svg></span>
+                <div><h3>手機拍攝或選圖</h3><p>保持穩定、光線均勻；可用相機拍攝或選擇現有照片。</p><a href="#screening">前往影像輸入 <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-number">3</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 5v6M24 37v6M43 24h-6M11 24H5M37 11l-4 4M15 33l-4 4M37 37l-4-4M15 15l-4-4"/></svg></span>
+                <div><h3>確認色彩拍攝條件</h3><p>依校色準備提示檢查光線、貼紙反光與臉部穩定；不會自動校正照片。</p><a href="#calibration">查看校色提醒 <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-number">4</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M4 24c7-10 13-15 20-15s13 5 20 15c-7 10-13 15-20 15S11 34 4 24Z"/><circle cx="24" cy="24" r="7"/><circle cx="24" cy="24" r="2.5" fill="currentColor"/></svg></span>
+                <div><h3>定位眼部影像</h3><p>Face Mesh 在本機協助定位雙眼並放大預覽；定位不代表疾病辨識。</p><a href="#screening">選擇眼部影像 <span aria-hidden="true">↗</span></a></div>
+              </article>
+            </div>
+            <div class="workflow-column workflow-column-later">
+              <article class="workflow-step">
+                <span class="workflow-number">5</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="18" cy="18" r="9"/><path d="M24 24l12 12"/><path d="M15 18h6M18 15v6"/></svg></span>
+                <div><h3>分析眼部 ROI 特徵</h3><p>取樣眼白、虹膜周邊及中心區域的 RGB、HSV、CIELAB 描述值，不作疾病分類。</p><a href="#screening">查看分析流程 <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-number">6</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M24 12v12l8 5"/><path d="M17 8h14"/></svg></span>
+                <div><h3>保存並查看歷史</h3><p>登入本機帳號後保存影像與量測，日後可查看紀錄；目前不會自動比對或使用 AI 資料庫。</p><a href="#history">前往歷史紀錄 <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-number">7</span>
+                <span class="workflow-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M15 9H9v30h30V9h-6"/><path d="M15 9V5h18v4"/><path d="M16 19h16M16 25h16M16 31h10"/></svg></span>
+                <div><h3>閱讀健康提醒</h3><p>報告提供一般照護建議，不計算風險分級、不診斷或排除疾病；有症狀請諮詢專業人員。</p><a href="#health-advice">查看健康提醒 <span aria-hidden="true">↗</span></a></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section section-wrap">
+        <div class="feature-intro">
+          <p class="eyebrow">影像資料</p>
+          <h2>記錄的影像資訊</h2>
+          <p>系統會整理全圖平均色彩與亮度，並標記眼部區域的 RGB、HSV、CIELAB 相關數值，用於後續比較與紀錄。</p>
+        </div>
+        <div class="feature-list">
+          <article><span>R / G / B</span><div><h3>全圖平均色彩</h3><p>以 0–255 表示整張照片的紅、綠、藍平均值。</p></div></article>
+          <article><span>ROI / Lab</span><div><h3>眼部區域描述</h3><p>以眼部特徵點取樣眼白、虹膜周邊及中心區域；數值受光線與相機影響。</p></div></article>
+          <article><span>LOCAL</span><div><h3>本機保存</h3><p>帳號、量測值與原始影像都留在此瀏覽器的 IndexedDB。</p></div></article>
+        </div>
+      </section>
+
+      <section class="notice-band section-wrap" id="health-advice">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <div class="notice-copy"><strong>重要健康提醒</strong><p>這不是醫療器材，也不是眼部疾病篩檢或診斷工具。若有眼痛、明顯視力變化、外傷或持續不適，請尋求眼科專業評估；突發視力喪失或嚴重疼痛請儘速就醫。</p></div>
+        <button class="button button-outline clinic-map-button" id="clinic-map-link" type="button">搜尋附近眼科診所與路線 ↗</button>
+      </section>
+
+      <section class="triage-section" id="triage">
+        <div class="section-wrap triage-content">
+          <h2>檢測前確認</h2>
+          <p class="triage-intro">請回答三個簡短問題，再繼續影像紀錄。</p>
+          <div class="triage-checks">
+            <fieldset class="triage-question">
+              <legend>近 3 個月內有眼傷或眼部手術嗎？</legend>
+              <label><input type="radio" name="triage-injury" value="yes"><span>是</span></label>
+              <label><input type="radio" name="triage-injury" value="no"><span>否</span></label>
+            </fieldset>
+            <fieldset class="triage-question">
+              <legend>目前有配戴隱形眼鏡嗎？</legend>
+              <label><input type="radio" name="triage-contacts" value="yes"><span>是</span></label>
+              <label><input type="radio" name="triage-contacts" value="no"><span>否</span></label>
+            </fieldset>
+            <fieldset class="triage-question">
+              <legend>過去 30 分鐘內有點眼藥水嗎？</legend>
+              <label><input type="radio" name="triage-drops" value="yes"><span>是</span></label>
+              <label><input type="radio" name="triage-drops" value="no"><span>否</span></label>
+            </fieldset>
+          </div>
+          <p class="triage-status" id="triage-status" role="status" aria-live="polite" tabindex="-1"></p>
+          <button class="triage-clinic-link" id="triage-clinic-link" type="button" hidden>搜尋附近眼科診所與路線 ↗</button>
+          <button class="button triage-button" id="triage-continue" type="button" disabled>前往影像紀錄 <span aria-hidden="true">→</span></button>
+          <p class="triage-footnote">此預檢只提供拍攝前提醒，不作診斷。若有眼痛、視力變化或不確定是否適合拍攝，請諮詢眼科專業人員。</p>
+        </div>
+      </section>
+
+      <section class="calibration-section" id="calibration">
+        <div class="section-wrap calibration-content">
+          <p class="eyebrow">校色準備</p>
+          <h2>校色準備</h2>
+          <p class="calibration-intro">使用霧面 RGBW 校色貼紙作為拍攝中的中性色參考，讓影像更容易比較與判讀。</p>
+          <div class="sticker-design" aria-label="RGBW 校色貼紙正反面示意">
+            <figure class="sticker-figure">
+              <div class="sticker-front" aria-hidden="true">
+                <span class="swatch-red"></span><span class="swatch-green"></span><span class="swatch-blue"></span><span class="swatch-white"></span>
+                <div class="sticker-grip"><i></i><i></i><i></i><i></i></div>
+              </div>
+              <figcaption><strong>正面 · 約 2.0 × 2.5 cm</strong><span>霧面 RGBW 色塊 + 防滑紋理</span></figcaption>
+            </figure>
+            <figure class="sticker-figure">
+              <div class="sticker-back" aria-hidden="true"><span>醫用膠</span><i></i><span>無膠隔離層</span></div>
+              <figcaption><strong>背面 · 下緣留隔離層</strong><span>依貼紙產品說明取下離型層</span></figcaption>
+            </figure>
+          </div>
+          <ol class="calibration-checks sticker-steps">
+            <li><strong>清潔並擦乾：</strong>清潔雙手與預計貼附的臉頰位置，確認皮膚乾爽。</li>
+            <li><strong>貼於眼下：</strong>貼在眼睛下方顴骨處，不接觸眼球、眼瞼或睫毛；若產品不適用於皮膚，請勿使用。</li>
+            <li><strong>對準鏡頭：</strong>讓雙眼和 RGBW 色塊完整同框，保持貼紙平整、無遮擋。</li>
+            <li><strong>避免反光：</strong>使用均勻光線，避開閃光燈、強烈直射光與色偏燈光。</li>
+            <li><strong>拍攝與檢查：</strong>影像處理會嘗試辨識 RGBW 色塊，以白色色塊估算白平衡；未找到貼紙時會提示並以原圖繼續。</li>
+            <li><strong>取下貼紙：</strong>按產品說明慢慢取下並妥善丟棄，避免拉扯皮膚。</li>
+          </ol>
+          <p class="calibration-disclaimer">目前使用白色色塊進行簡易白平衡估算，不是完整色彩校正；貼紙、光線和相機差異仍會影響數值，也不會產生疾病診斷。</p>
+          <button class="button calibration-button" id="calibration-open-camera" type="button">開啟相機 <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <section class="screening-section" id="screening">
+        <div class="section-wrap screening-layout">
+          <div class="screening-copy">
+            <p class="eyebrow">影像紀錄</p>
+            <h2>新增一筆影像紀錄</h2>
+            <p>拍攝或選擇一張雙眼與 RGBW 貼紙同框的照片，並保留當次的拍攝條件與量測結果。</p>
+            <div class="check-list">
+              <span><b>✓</b> 僅接受 JPG、PNG 或 WebP</span>
+              <span><b>✓</b> 影像大小上限 8 MB</span>
+              <span><b>✓</b> 需要登入才能保存歷史</span>
+            </div>
+          </div>
+          <div class="upload-card">
+            <div class="upload-card-top"><span class="step-badge">01</span><span>IMAGE INPUT</span><span class="local-badge">LOCAL ONLY</span></div>
+            <div class="upload-zone" id="upload-zone">
+              <span class="upload-symbol" aria-hidden="true">↑</span>
+              <strong>新增眼部影像</strong>
+              <span>讓雙眼與 RGBW 貼紙完整同框、清晰無反光</span>
+              <div class="input-actions">
+                <button class="button button-dark button-small" id="open-camera" type="button">開啟相機</button>
+                <button class="button button-outline button-small" id="choose-image" type="button">選擇照片</button>
+              </div>
+              <span class="upload-formats">JPG · PNG · WEBP</span>
+            </div>
+            <p class="sticker-status" id="sticker-status" role="status" aria-live="polite"></p>
+            <input id="image-input" class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp">
+            <div class="image-preview-wrap" id="image-preview-wrap" hidden>
+              <img id="image-preview" alt="待量測的眼部影像">
+              <button class="remove-image" id="remove-image" type="button" aria-label="移除已選影像">×</button>
+            </div>
+            <p class="upload-error" id="upload-error" role="alert"></p>
+            <div class="measurement-preview" id="measurement-preview" hidden>
+              <div><span>平均 R</span><strong id="metric-r">--</strong></div>
+              <div><span>平均 G</span><strong id="metric-g">--</strong></div>
+              <div><span>平均 B</span><strong id="metric-b">--</strong></div>
+              <div><span>平均亮度</span><strong id="metric-l">--</strong></div>
+            </div>
+            <button class="button button-dark button-wide" id="save-record" type="button" disabled>儲存影像紀錄 <span aria-hidden="true">↗</span></button>
+            <p class="privacy-note"><span aria-hidden="true">▣</span> 儲存於本機瀏覽器，不會傳送到伺服器。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="report-section" id="report" hidden>
+        <div class="report-header">
+          <div><p class="eyebrow">IMAGE REVIEW</p><h2>眼部影像結果</h2></div>
+          <div class="report-level" aria-live="polite">
+            <span>風險分級</span>
+            <div class="risk-indicator" aria-hidden="true">
+              <span class="risk-dot risk-green"></span>
+              <span class="risk-dot risk-yellow"></span>
+              <span class="risk-dot risk-red"></span>
+            </div>
+            <strong id="report-risk-level">未評估</strong>
+          </div>
+        </div>
+        <div class="report-result-layout">
+          <section class="result-summary-card" aria-labelledby="result-summary-title">
+            <div class="result-summary-icon" aria-hidden="true">i</div>
+            <div><p class="result-card-kicker">影像分析摘要</p><h3 id="result-summary-title">本原型不提供疾病風險分級</h3><p id="report-summary">尚未取得可量測的眼部 ROI 特徵。</p></div>
+            <span class="result-status-pill">未判讀</span>
+          </section>
+
+          <div class="report-image">
+            <img id="report-image" alt="本次眼部影像；僅供影像檢視，未進行疾病判讀">
+            <p id="report-image-status" role="status"></p>
+          </div>
+
+          <section class="result-card report-screenings">
+            <div class="result-card-heading"><div><p class="result-card-kicker">IMAGE FEATURE REVIEW</p><h3>五項眼部觀察</h3></div><span class="result-status-pill">非診斷</span></div>
+            <p class="result-card-description">狀態僅表示相關眼部 ROI 特徵是否成功量測，不代表疾病是否存在，也不提供陽性／陰性、嚴重度或風險判定。</p>
+            <ul>
+              <li><div><strong>黃疸／鞏膜色澤</strong><span id="feature-sclera">尚未取得眼白 ROI 色彩特徵</span></div><b class="condition-status" id="feature-sclera-status">未評估</b></li>
+              <li><div><strong>眼表泛紅</strong><span id="feature-redness">尚未取得眼表 ROI 色彩特徵</span></div><b class="condition-status" id="feature-redness-status">未評估</b></li>
+              <li><div><strong>針眼／麥粒腫</strong><span>未定義眼瞼 ROI；系統無法評估</span></div><b class="condition-status">未評估</b></li>
+              <li><div><strong>瞳孔中心亮度</strong><span id="feature-pupil">尚未取得瞳孔中心 ROI 特徵</span></div><b class="condition-status" id="feature-pupil-status">未評估</b></li>
+              <li><div><strong>虹膜周邊色澤</strong><span id="feature-iris-rim">尚未取得虹膜周邊 ROI 色彩特徵</span></div><b class="condition-status" id="feature-iris-rim-status">未評估</b></li>
+            </ul>
+          </section>
+
+          <section class="result-card result-system-card">
+            <div class="result-card-heading"><div><p class="result-card-kicker">HOW TO READ THIS</p><h3>影像分析與限制</h3></div></div>
+            <p>MediaPipe Face Mesh 在本機協助定位雙眼。系統可量測眼白、虹膜周邊及中心區域的 RGB、HSV、CIELAB 描述值；沒有經驗證的疾病分類器，因此不會標記「高／中／低風險」或判定疾病存在與否。</p>
+            <div class="result-metrics-group"><h4>全圖色彩與亮度</h4><p>全圖平均值不是眼部專屬量測。</p><div class="report-metrics" id="report-metrics"></div></div>
+            <div class="result-metrics-group"><h4>眼部 ROI 量測值</h4><p>數值會受光線、曝光、貼紙與相機影響。</p><div class="report-metrics eye-roi-metrics" id="eye-roi-metrics"></div></div>
+          </section>
+
+          <section class="result-care-card">
+            <p class="result-card-kicker">CARE GUIDANCE</p><h3>健康照護建議</h3>
+            <ul><li>若持續眼紅、眼痛、分泌物增加或視力變化，請安排眼科評估。</li><li>突發視力喪失、嚴重疼痛或眼部外傷，請儘速就醫。</li><li>本報告不能診斷、排除疾病或取代專業檢查。</li></ul>
+          </section>
+
+          <div class="report-actions">
+            <button class="button button-dark" id="report-save" type="button">儲存影像紀錄</button>
+            <button class="button button-outline" id="report-history" type="button">查看歷史紀錄</button>
+            <button class="button button-outline" id="report-new" type="button">重新檢測</button>
+          </div>
+          <p class="report-disclaimer">影像與量測留存在本機瀏覽器；所有特徵僅供個人整理與就醫溝通參考。</p>
+        </div>
+      </section>
+
+      <section class="history-section section-wrap" id="history">
+        <div class="history-heading">
+          <div><h2>影像歷史</h2><p>只有登入中的本機帳號可以查看這些紀錄。</p></div>
+          <button class="button button-outline button-small" id="history-refresh" type="button">重新整理 ↻</button>
+        </div>
+        <div class="history-content" id="history-content">
+          <div class="history-empty">
+            <span class="empty-art" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong>登入以查看你的歷史紀錄</strong>
+            <p>儲存的影像與量測會留在目前瀏覽器。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dataset-section section-wrap" id="dataset">
+        <div class="dataset-heading">
+          <div>
+            <p class="eyebrow">資料集檢查</p>
+            <h2>資料集檢查</h2>
+            <p>選取資料夾後檢查影像、標籤與中繼資料，僅在本機瀏覽器進行整理與確認。</p>
+          </div>
+          <label class="button button-dark dataset-select-button" for="dataset-input">選擇資料夾
+            <input id="dataset-input" class="visually-hidden" type="file" webkitdirectory directory multiple>
+          </label>
+        </div>
+        <p class="dataset-format-note">建議每個疾病資料夾包含 Images/ 與 Labels/。TIFF、PNG、JPEG 會檢查影像模式與尺寸；以 SHA-256 比對完全相同的影像檔案。Metadata/metadata.csv 可使用欄位 image_filename、patient_id、modality、label。</p>
+        <p class="dataset-status" id="dataset-status" role="status" aria-live="polite">尚未選取資料夾。</p>
+        <div class="dataset-results" id="dataset-results" hidden></div>
+        <p class="dataset-disclaimer">檢查結果僅協助整理資料，不代表標籤正確或資料適合訓練。相同病人的多張影像不是檔案重複；本工具會依中繼資料列出重複病人，以提醒訓練、驗證與測試資料需以病人為單位切分。顯微鏡影像與一般眼部照片應依 modality 分開整理；不會用影像判定疾病。</p>
+        <a class="dataset-source" href="https://escrs.org/special-interest-groups/digital-health/current-datasets" target="_blank" rel="noreferrer">ESCRS Current Datasets 官方入口 ↗</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand-footer" href="#top"><span class="brand-mark" aria-hidden="true"><span></span></span><span><strong>COLORSAFE</strong><small>EYE-AI</small></span></a>
+      <p>以影像紀錄支持日常照護。非醫療診斷工具。</p>
+      <a href="#top">回到頂端 ↑</a>
+      <small>© 2026 ColorSafe EYE-AI · 本機資料，不上傳</small>
+    </footer>
+
+    <dialog class="auth-dialog" id="auth-dialog" aria-labelledby="auth-title">
+      <form class="auth-form" id="auth-form">
+        <button class="dialog-close" type="button" id="auth-close" aria-label="關閉登入視窗">×</button>
+        <span class="modal-kicker">LOCAL ACCOUNT</span>
+        <h2 id="auth-title">歡迎回來</h2>
+        <p class="auth-intro" id="auth-intro">登入以查看儲存在此瀏覽器的影像紀錄。</p>
+        <div class="auth-switch" role="tablist" aria-label="帳號模式">
+          <button type="button" class="active" id="login-tab" role="tab" aria-selected="true">登入</button>
+          <button type="button" id="register-tab" role="tab" aria-selected="false">建立帳號</button>
+        </div>
+        <label class="auth-field" id="name-field" hidden>顯示名稱<input id="display-name" name="name" autocomplete="name" maxlength="60" placeholder="你的名字"></label>
+        <label class="auth-field">電子郵件<input id="email" name="email" type="email" autocomplete="username" required maxlength="254" placeholder="you@example.com"></label>
+        <label class="auth-field">密碼<input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" placeholder="至少 8 個字元"></label>
+        <p class="auth-error" id="auth-error" role="alert"></p>
+        <button class="button button-dark button-wide auth-submit" id="auth-submit" type="submit">登入</button>
+        <p class="auth-privacy">帳號只存在此瀏覽器，密碼以 PBKDF2 雜湊後儲存。沒有伺服器或帳號復原功能。</p>
+      </form>
+    </dialog>
+
+    <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+      <div class="detail-content">
+        <button class="dialog-close" type="button" id="detail-close" aria-label="關閉紀錄">×</button>
+        <p class="eyebrow">SAVED IMAGE RECORD</p>
+        <h2 id="detail-title">影像紀錄</h2>
+        <div id="detail-body"></div>
+      </div>
+    </dialog>
+    <dialog class="camera-dialog" id="camera-dialog" aria-labelledby="camera-title">
+      <div class="camera-content">
+        <button class="dialog-close" type="button" id="camera-close" aria-label="關閉相機">×</button>
+        <p class="eyebrow">LIVE CAMERA</p>
+        <h2 id="camera-title">拍攝影像</h2>
+        <p class="camera-intro">請讓雙眼與 RGBW 貼紙同時入鏡。相機只追蹤眼部；拍攝後才會嘗試辨識貼紙並估算白平衡。</p>
+        <div class="camera-view" id="camera-view">
+          <video id="camera-video" autoplay playsinline muted></video>
+          <div class="eye-guides" aria-hidden="true">
+            <span class="eye-guide eye-guide-left" id="eye-guide-left" hidden><i></i><b>EYE-L</b></span>
+            <span class="eye-guide eye-guide-right" id="eye-guide-right" hidden><i></i><b>EYE-R</b></span>
+          </div>
+          <span id="camera-placeholder">相機畫面會顯示在這裡</span>
+        </div>
+        <div class="camera-status-grid" aria-live="polite">
+          <p class="camera-status-item"><span>FACE</span><strong id="face-status">等待</strong></p>
+          <p class="camera-status-item"><span>EYE</span><strong id="eye-status">等待</strong></p>
+          <p class="camera-status-item"><span>LIGHT</span><strong>等待</strong></p>
+        </div>
+        <p class="eye-tracking-status" id="eye-tracking-status" role="status">等待相機啟動</p>
+        <p class="camera-error" id="camera-error" role="alert"></p>
+        <div class="camera-actions">
+          <button class="button button-dark" id="take-photo" type="button" disabled>擷取特徵並分析</button>
+        </div>
+        <p class="camera-guidance">雙眼與貼紙需清晰完整入鏡；避免反光，保持頭部穩定。</p>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

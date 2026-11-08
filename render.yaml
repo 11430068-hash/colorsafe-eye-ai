@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: colorsafe-eye-ai
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
